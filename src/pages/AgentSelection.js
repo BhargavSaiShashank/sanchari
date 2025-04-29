@@ -1,26 +1,15 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+// Removed unused useNavigate import
 import {
   Star,
-  MessageSquare,
-  Video,
-  Phone,
-  Globe,
   Filter,
   Search,
-  Check,
   ChevronDown,
-  MapPin,
-  Clock,
-  Award,
-  ThumbsUp,
-  Users,
-  Heart
+  MapPin
 } from 'lucide-react';
 
 const AgentSelection = () => {
-  const navigate = useNavigate();
   const [selectedFilters, setSelectedFilters] = useState({
     specializations: [],
     languages: [],

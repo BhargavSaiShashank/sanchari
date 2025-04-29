@@ -9,13 +9,9 @@ import {
   MessageSquare,
   Star,
   ChevronRight,
-  Plane,
-  Hotel,
-  Utensils,
   Mountain,
   Globe,
   Award,
-  Shield,
   Heart,
   User,
   ChevronUp

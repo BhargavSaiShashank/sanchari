@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import { db } from '../services/firebase';
 import { 
-  Calendar, 
-  MapPin, 
-  Users, 
-  DollarSign, 
-  Star,
-  ChevronRight,
-  AlertCircle
 } from 'lucide-react';
 
 const TripPreferences = () => {

@@ -6,8 +6,6 @@ import {
   PieChart,
   Users,
   Briefcase,
-  MapPin,
-  Search,
   Download,
   Calendar,
   TrendingUp,
@@ -16,7 +14,6 @@ import {
   Star,
   Filter,
   ChevronDown,
-  Bell
 } from 'lucide-react';
 
 const AdminDashboard = () => {

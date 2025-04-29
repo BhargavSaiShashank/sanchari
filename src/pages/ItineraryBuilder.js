@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, Clock, Plus, X, Save, ChevronRight, ChevronDown, ChevronUp, Star, GripHorizontal, Globe } from 'lucide-react';
+import { MapPin, Clock, Plus, X, Save, ChevronDown, ChevronUp, Star, GripHorizontal, Globe } from 'lucide-react';
 
 const ItineraryBuilder = () => {
   const [days, setDays] = useState([{ date: '', activities: [] }]);
@@ -14,14 +14,14 @@ const ItineraryBuilder = () => {
   const mapRef = useRef(null);
 
   // Mock place data - in a real app this would come from a places API
-  const mockPlaces = [
+  const mockPlaces = useMemo(() => [
     { id: 1, name: 'Beach Resort', type: 'accommodation', location: { lat: 1.23, lng: 103.45 }, address: '123 Beach Road', rating: 4.7, image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
     { id: 2, name: 'Ocean View Restaurant', type: 'dining', location: { lat: 1.24, lng: 103.47 }, address: '45 Ocean Drive', rating: 4.5, image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
     { id: 3, name: 'Sunset Beach', type: 'attraction', location: { lat: 1.22, lng: 103.44 }, address: 'Sunset Bay', rating: 4.9, image: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
     { id: 4, name: 'Cultural Museum', type: 'attraction', location: { lat: 1.25, lng: 103.48 }, address: '78 Heritage Street', rating: 4.3, image: 'https://images.unsplash.com/photo-1582034438086-9e5543d6b2ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
     { id: 5, name: 'Mountain Hiking Trail', type: 'activity', location: { lat: 1.27, lng: 103.49 }, address: 'Mountain Park', rating: 4.8, image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
     { id: 6, name: 'Downtown Cafe', type: 'dining', location: { lat: 1.23, lng: 103.46 }, address: '96 Main Street', rating: 4.4, image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60' },
-  ];
+  ], []);
 
   useEffect(() => {
     // Simulating a search API call
@@ -29,7 +29,7 @@ const ItineraryBuilder = () => {
       place.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setSearchResults(results);
-  }, [searchQuery]);
+  }, [searchQuery, mockPlaces]);
 
   // In a real app, this would initialize a map library like Google Maps or Mapbox
   useEffect(() => {

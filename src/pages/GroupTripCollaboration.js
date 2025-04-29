@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+// Removed unused import for 'motion'
 import {
   Users,
-  Mail,
-  Phone,
-  MessageSquare,
   Map,
   Calendar,
   Clock,
@@ -12,14 +9,8 @@ import {
   Trash2,
   CheckCircle,
   XCircle,
-  AlertCircle,
   Share2,
-  Copy,
   Video,
-  Save,
-  Edit,
-  ChevronRight,
-  ChevronDown,
   Heart
 } from 'lucide-react';
 

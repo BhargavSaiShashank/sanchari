@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Award, 
@@ -10,9 +10,7 @@ import {
   Crown, 
   MapPin, 
   CheckCircle, 
-  PlusCircle,
   Lock,
-  ChevronRight,
   Users,
   MessageSquare,
   Heart,
@@ -103,8 +101,16 @@ const LoyaltyProgram = () => {
   };
   
   const confirmRedemption = () => {
+    const newPoints = userPoints - selectedReward.points;
     // In a real app, this would call an API to process the redemption
-    setUserPoints(userPoints - selectedReward.points);
+    setUserPoints(newPoints);
+    
+    // Update user level based on new point total
+    if (newPoints >= 10000) setUserLevel('Platinum');
+    else if (newPoints >= 3000) setUserLevel('Gold');
+    else if (newPoints >= 1000) setUserLevel('Silver');
+    else setUserLevel('Bronze');
+    
     setRedeemModal(false);
     setSelectedReward(null);
     

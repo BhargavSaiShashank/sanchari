@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   Calendar,
   Users,
@@ -10,15 +10,11 @@ import {
   Video,
   Phone,
   ArrowRight,
-  ChevronRight,
-  X,
   Check,
-  Star,
   Plane,
   Globe,
   Compass,
   Sun,
-  Coffee,
   Camera,
   Music,
   Utensils,
@@ -28,14 +24,11 @@ import {
   Heart,
   AlertCircle,
   Briefcase,
-  Map,
   Wine,
   Baby,
   Accessibility,
   Languages,
   CreditCard,
-  Sunrise,
-  Sunset,
   Umbrella,
   Activity,
   Building,
@@ -46,7 +39,7 @@ import {
 } from 'lucide-react';
 
 const PlanTrip = () => {
-  const { category, packageName } = useParams();
+  const { packageName } = useParams();
   const navigate = useNavigate();
   const [tripType, setTripType] = useState('regular');
   const [selectedCommunication, setSelectedCommunication] = useState(null);
@@ -137,16 +130,17 @@ const PlanTrip = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setActiveStep(3);
     localStorage.setItem('tripFormData', JSON.stringify(formData));
     navigate('/agent-selection');
   };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+    setActiveStep(2);
   };
 
   const communicationMethods = [
@@ -836,6 +830,42 @@ const PlanTrip = () => {
                       />
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Travel Preferences */}
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold text-gray-900 flex items-center">
+                  <Compass className="w-5 h-5 mr-2 text-indigo-600" />
+                  Travel Preferences
+                </h3>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {preferenceOptions.map((option) => (
+                    <motion.button
+                      key={option.id}
+                      type="button"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => handlePreferenceToggle(option.id)}
+                      className={`p-4 rounded-xl border-2 transition-all duration-300 ${
+                        formData.preferences.includes(option.id)
+                          ? 'border-indigo-600 bg-indigo-50/50 shadow-md'
+                          : 'border-gray-200 hover:border-indigo-300'
+                      }`}
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className={`p-2 rounded-lg ${
+                          formData.preferences.includes(option.id)
+                            ? 'bg-indigo-600 text-white'
+                            : 'bg-gray-100 text-gray-600'
+                        }`}>
+                          {option.icon}
+                        </div>
+                        <span className="font-medium text-gray-900">{option.label}</span>
+                      </div>
+                    </motion.button>
+                  ))}
                 </div>
               </div>
 

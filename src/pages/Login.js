@@ -6,7 +6,6 @@ import {
   Lock,
   Eye,
   EyeOff,
-  User,
   ArrowRight,
   Facebook,
   Chrome,
@@ -147,9 +146,9 @@ const Login = () => {
                       </label>
                     </div>
                     <div className="text-sm">
-                      <a href="#" className="font-medium text-teal-600 hover:text-teal-500">
+                      <Link to="/forgot-password" className="font-medium text-teal-600 hover:text-teal-500">
                         Forgot password?
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -177,28 +176,28 @@ const Login = () => {
 
                 <div className="mt-6 grid grid-cols-3 gap-3">
                   <div>
-                    <a
-                      href="#"
+                    <button
+                      onClick={() => {/* Add Facebook login handler */}}
                       className="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50"
                     >
                       <Facebook className="h-5 w-5 text-blue-600" />
-                    </a>
+                    </button>
                   </div>
                   <div>
-                    <a
-                      href="#"
+                    <button
+                      onClick={() => {/* Add Twitter login handler */}}
                       className="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50"
                     >
                       <Twitter className="h-5 w-5 text-blue-400" />
-                    </a>
+                    </button>
                   </div>
                   <div>
-                    <a
-                      href="#"
+                    <button
+                      onClick={() => {/* Add Google login handler */}}
                       className="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50"
                     >
                       <Chrome className="h-5 w-5 text-red-500" />
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>

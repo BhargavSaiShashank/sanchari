@@ -7,9 +7,7 @@ import {
   Briefcase,
   User,
   ArrowRight,
-  MapPin,
   Calendar,
-  DollarSign,
   Star,
   IndianRupee
 } from 'lucide-react';

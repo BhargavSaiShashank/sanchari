@@ -212,7 +212,7 @@ const Register = () => {
                   </div>
                   <div className="ml-3 text-sm">
                     <label htmlFor="terms" className="font-medium text-gray-700">
-                      I agree to the <a href="#" className="text-teal-600 hover:text-teal-500">Terms of Service</a> and <a href="#" className="text-teal-600 hover:text-teal-500">Privacy Policy</a>
+                      I agree to the <Link to="/terms" className="text-teal-600 hover:text-teal-500">Terms of Service</Link> and <Link to="/privacy" className="text-teal-600 hover:text-teal-500">Privacy Policy</Link>
                     </label>
                   </div>
                 </div>
@@ -240,28 +240,31 @@ const Register = () => {
 
                 <div className="mt-6 grid grid-cols-3 gap-3">
                   <div>
-                    <a
-                      href="#"
+                    <button
+                      type="button"
+                      onClick={() => window.location.href = '/auth/facebook'}
                       className="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50"
                     >
                       <Facebook className="h-5 w-5 text-blue-600" />
-                    </a>
+                    </button>
                   </div>
                   <div>
-                    <a
-                      href="#"
+                    <button
+                      type="button"
+                      onClick={() => window.location.href = '/auth/twitter'}
                       className="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50"
                     >
                       <Twitter className="h-5 w-5 text-blue-400" />
-                    </a>
+                    </button>
                   </div>
                   <div>
-                    <a
-                      href="#"
+                    <button
+                      type="button"
+                      onClick={() => window.location.href = '/auth/google'}
                       className="w-full inline-flex justify-center py-3 px-4 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50"
                     >
                       <Chrome className="h-5 w-5 text-red-500" />
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>

@@ -8,45 +8,29 @@ import {
   Camera,
   Calendar,
   Clock,
-  ChevronRight,
-  ChevronLeft,
   X,
   Check,
-  MessageSquare,
   Phone,
-  Video,
   Instagram,
   Facebook,
   Twitter,
   Heart,
   Share2,
-  Bookmark,
   Award,
-  CameraOff,
   Image as ImageIcon,
   Users,
   DollarSign,
   Info,
   ArrowRight,
-  Sliders,
-  ChevronDown,
-  ChevronUp,
-  Plus,
-  Minus,
   Mail,
   Linkedin
 } from 'lucide-react';
 
 const PhotographerBooking = () => {
   const [selectedPhotographer, setSelectedPhotographer] = useState(null);
-  const [showFilters, setShowFilters] = useState(false);
   const [showBookingForm, setShowBookingForm] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(null);
   const [activeTab, setActiveTab] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [priceRange, setPriceRange] = useState([0, 50000]);
-  const [selectedStyles, setSelectedStyles] = useState([]);
-  const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [bookingForm, setBookingForm] = useState({
     name: '',
     email: '',
@@ -135,16 +119,7 @@ const PhotographerBooking = () => {
     }
   ];
 
-  const photographyStyles = [
-    'Wedding',
-    'Portrait',
-    'Fashion',
-    'Commercial',
-    'Travel',
-    'Event',
-    'Product',
-    'Architecture'
-  ];
+  // Remove the unused constant since it's not being used in the component
 
   const handleBookingSubmit = (e) => {
     e.preventDefault();
@@ -181,6 +156,8 @@ const PhotographerBooking = () => {
                 <input
                   type="text"
                   placeholder="Search photographers..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-64 px-4 py-2 pl-10 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors"
                 />
                 <Search className="w-4 h-4 text-gray-400 absolute left-3 top-2.5" />
@@ -412,9 +389,9 @@ const PhotographerBooking = () => {
               <ul className="space-y-2">
                 {['Explore', 'How it works', 'Pricing', 'FAQs'].map((item) => (
                   <li key={item}>
-                    <a href="#" className="text-gray-600 hover:text-teal-700 transition-colors">
+                    <button className="text-gray-600 hover:text-teal-700 transition-colors">
                       {item}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -424,9 +401,9 @@ const PhotographerBooking = () => {
               <ul className="space-y-2">
                 {['Wedding', 'Portrait', 'Nature', 'Commercial', 'Events'].map((item) => (
                   <li key={item}>
-                    <a href="#" className="text-gray-600 hover:text-teal-700 transition-colors">
+                    <button className="text-gray-600 hover:text-teal-700 transition-colors">
                       {item}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -444,13 +421,13 @@ const PhotographerBooking = () => {
                 </div>
                 <div className="flex space-x-4 mt-4">
                   {[Instagram, Twitter, Facebook, Linkedin].map((Icon, i) => (
-                    <a
+                    <button
                       key={i}
-                      href="#"
                       className="p-2 bg-gray-100 text-teal-700 rounded-full hover:bg-teal-50 hover:text-teal-800 transition-colors"
+                      onClick={() => {/* Add social media action here */}}
                     >
                       <Icon className="w-5 h-5" />
-                    </a>
+                    </button>
                   ))}
                 </div>
               </div>

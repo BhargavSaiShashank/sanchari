@@ -1,27 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import {
   MapPin,
-  Calendar,
   Users,
   Clock,
   Star,
   Heart,
-  DollarSign,
   Filter,
   Search,
-  Sun,
-  Umbrella,
-  Mountain,
-  Coffee,
-  Camera,
-  Utensils,
-  Plane,
-  Hotel,
-  Map,
-  ChevronDown,
-  X
+  ChevronDown
 } from 'lucide-react';
 
 const TemplatePackages = () => {

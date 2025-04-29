@@ -4,16 +4,10 @@ import {
   Calendar,
   MapPin,
   Users,
-  Clock,
   Sparkles,
-  Search,
-  Filter,
-  Sliders,
-  ChevronRight,
   PlusCircle,
   ChevronDown,
   Star,
-  ArrowRight,
   Camera,
   Coffee,
   Music,
@@ -21,10 +15,8 @@ import {
   Wine,
   Mountain,
   Globe,
-  Heart,
   Send,
   RefreshCw,
-  Download,
   Save
 } from 'lucide-react';
 

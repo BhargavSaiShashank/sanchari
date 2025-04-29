@@ -1,30 +1,12 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+// Removed unused import of 'motion' from 'framer-motion'
 import {
-  Calendar,
   MapPin,
-  Users,
   Star,
-  MessageSquare,
-  Camera,
-  Globe,
-  Send,
-  Phone,
-  Clock,
-  Award,
-  Heart,
   Check,
-  X,
-  Filter,
   Search,
-  ChevronDown,
   ThumbsUp,
-  Map,
-  Compass,
-  Gift,
-  Sparkles,
   User,
-  Briefcase,
   ArrowLeft,
   Sliders,
   MessageCircle
@@ -38,7 +20,7 @@ const GuidePortfolios = ({ destination = "Bali, Indonesia", dates = "Aug 15-22, 
   const [filterSpecialty, setFilterSpecialty] = useState('');
   const [filterGender, setFilterGender] = useState('');
   const [filterAge, setFilterAge] = useState('');
-  const [showFilters, setShowFilters] = useState(false);
+  // Removed unused state variable 'showFilters'
   const [activeTab, setActiveTab] = useState('agent-recommended');
   const [showPreferenceModal, setShowPreferenceModal] = useState(true);
   const [userPreferences, setUserPreferences] = useState({
