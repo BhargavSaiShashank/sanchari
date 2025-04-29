@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import '../styles/Dashboard.css';
 import {
   Calendar,
@@ -18,28 +18,16 @@ import {
   Bell,
   Settings,
   LogOut,
-  ArrowUpRight,
-  ArrowDownRight,
   TrendingUp,
   TrendingDown,
-  Heart,
-  Globe,
-  Award,
   Mountain,
   Plane,
-  Hotel,
   Utensils,
   Camera,
-  Music,
-  ShoppingBag,
   Activity,
   X,
   Check,
-  Truck,
   Package,
-  Home,
-  Sparkles,
-  Zap,
   Sun,
   Moon,
   Compass,
@@ -212,7 +200,6 @@ const TripHighlights = () => {
 const Dashboard = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const [activeTab, setActiveTab] = useState('upcoming');
   const [selectedTrip, setSelectedTrip] = useState(null);
   const [showNotificationPanel, setShowNotificationPanel] = useState(false);
@@ -221,9 +208,9 @@ const Dashboard = () => {
     { id: 2, message: 'Payment received', time: '1d ago', read: true, type: 'payment' },
     { id: 3, message: 'Your trip to Bali is confirmed!', time: '2d ago', read: false, type: 'booking' }
   ]);
-  const [currentTripStatus, setCurrentTripStatus] = useState(3); // Example: Guide Assigned
+  const [currentTripStatus] = useState(3); // Example: Guide Assigned
   const [darkMode, setDarkMode] = useState(false);
-  const [showWeather, setShowWeather] = useState(true);
+  // Removed unused state variable 'showWeather'
 
   const upcomingTrips = [
     {

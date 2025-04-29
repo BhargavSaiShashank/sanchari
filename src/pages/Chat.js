@@ -7,11 +7,9 @@ import {
   Mic,
   Phone,
   Video,
-  MoreVertical,
   Search,
   ChevronLeft,
   Image as ImageIcon,
-  File,
   MapPin,
   Calendar,
   Clock,
@@ -19,14 +17,10 @@ import {
   CheckCheck,
   Users,
   DollarSign,
-  Heart,
-  ThumbsUp,
   Star,
   Share2,
   BookOpen,
   Camera,
-  Globe,
-  Sun,
   Coffee,
   Utensils,
   Mountain
@@ -145,13 +139,7 @@ const Chat = () => {
     { text: 'Local Swiss cuisine', icon: <Utensils className="w-4 h-4" /> }
   ];
 
-  const handleReaction = (messageId, reaction) => {
-    setMessages(messages.map(msg => 
-      msg.id === messageId 
-        ? { ...msg, reactions: [...(msg.reactions || []), reaction] }
-        : msg
-    ));
-  };
+  // Removed unused handleReaction function to resolve the compile error.
 
   return (
     <div className="flex h-screen bg-[url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3')] bg-cover bg-fixed bg-no-repeat bg-center before:content-[''] before:absolute before:inset-0 before:bg-gradient-to-b before:from-teal-800/50 before:via-teal-700/40 before:to-emerald-900/60 before:z-0 relative">
