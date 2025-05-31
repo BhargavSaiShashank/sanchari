@@ -1,38 +1,63 @@
-# KR0355: Digital Marketplace for Personalized Travel Planning
+#  Sanchari – Personalized Travel Planning Platform
 
-A full-stack web application for personalized travel planning with real-time collaboration features.
+**Problem Statement KR0355 – Soven Developers**  
+A digital marketplace connecting travelers with verified, experienced travel agents who design customized itineraries based on user preferences, interests, and budget. Travelers collaborate with agents through chat or video to co-create their ideal journey, with all planning and bookings managed in one platform.
 
-## Features
+---
 
-- User and Agent Authentication
-- Trip Preference Form
-- Agent Matching System
-- Real-time Chat and Video Collaboration
-- Itinerary Builder
-- Dashboard Tracking
-- Push Notifications
-- Review System
-- Smart Suggestions
-- Voice Assistant Trip Planning
-- Photographer Booking
-- Filtered Guide Portfolios
+##  Overview
 
-## Tech Stack
+**Sanchari** is a travel-tech platform that enables:
+- Personalized trip planning with the help of human travel agents
+- Real-time collaboration via chat or video
+- A unified place for travelers to plan, customize, and manage their travel experiences
 
-### Frontend
-- React.js
-- Tailwind CSS
-- React Router DOM
-- Framer Motion
-- Lucide React
-- Web Speech API
+Currently, the platform features a fully responsive UI and mapped-out system flow. Backend and AI integrations are scoped and under development.
 
-### Backend
-- Firebase Authentication
-- Firestore
-- Realtime Database
-- Cloud Messaging
-- Hosting
+---
+
+##  Tech Stack
+
+| Layer          | Technology         |
+|----------------|--------------------|
+| Frontend       | HTML, Tailwind CSS, JavaScript|
+| UI/UX Design   | Figma              |
+| Version Control| Git, GitHub        |
+| Deployment     |  Netlify |
+| AI (Planned)   | Groq / OpenAI / Custom LLM prompts |
+| Backend (Planned) | Node.js + Express or Flask API |
+| DevOps (Planned) | Docker, GitHub Actions |
+
+---
+
+##  Features Implemented
+
+- 🖼️ Clean, modern, responsive UI
+- 🧭 User journey mapped for travelers and agents
+- 🗺️ Itinerary structure planned
+- 🔗 Frontend ready for API hooks
+
+---
+
+##  Features in Progress
+
+- 🔌 Backend integration for agent-traveler communication
+- 🤖 AI module for generating personalized itineraries
+- 🧾 Booking system and real-time updates
+- 🎥 Live chat/video session integration (Twilio or Agora)
+
+---
+
+## 🧭 Project Architecture (Planned)
+
+```plaintext
+Frontend (User Interface)
+        ↓
+Backend API (Trip Data, Booking Info, User Auth)
+        ↓
+AI Engine (Personalized Itinerary Generator)
+        ↓
+Database (Traveler Info, Agent Profiles, Itineraries)
 
 ## Project Structure
 
